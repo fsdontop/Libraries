@@ -1,4 +1,6 @@
-local Amount = 1;
+if not getgenv().Amount then
+    getgenv().Amount = 0;
+end
 
 local LocalPlayer = game:GetService("Players").LocalPlayer;
 local RunService = game:GetService("RunService");
@@ -17,7 +19,7 @@ local GetNames = function()
     return CTable
 end
 
-for _ = 1, Amount do
+for _ = 1, getgenv().Amount do
     local Tools = {}
     
     for _, Tool in pairs(LocalPlayer.Backpack:GetChildren()) do
